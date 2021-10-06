@@ -1,0 +1,39 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>
+      <h4>Add new todo</h4>
+    </mat-card-title>
+  </mat-card-header>
+
+  <form #form="ngForm" (ngSubmit)="addTodo(form)">
+    <mat-form-field appearance="outline">
+      <mat-label>Title</mat-label>
+      <input matInput ngModel #title="ngModel" name="title" required />
+      <mat-error>{{getErrorMsg(title)}}</mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Description</mat-label>
+      <textarea
+        matInput
+        ngModel
+        #desc="ngModel"
+        name="description"
+        required
+      ></textarea>
+      <mat-error>{{getErrorMsg(desc)}}</mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Status</mat-label>
+      <mat-select ngModel name="status" required #stats="ngModel">
+        <mat-option value="pending">Pending</mat-option>
+        <mat-option value="in-progress">In progress</mat-option>
+        <mat-option value="done">Done</mat-option>
+      </mat-select>
+      <mat-error>{{getErrorMsg(stats)}}</mat-error>
+    </mat-form-field>
+
+    <button type="submit" mat-raised-button color="primary">Submit</button>
+  </form>
+</mat-card>

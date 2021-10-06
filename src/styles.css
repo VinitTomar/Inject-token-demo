@@ -1,0 +1,28 @@
+/* You can add global styles to this file, and also import other style files */
+
+html,
+body {
+  font-family: sans-serif;
+}
+
+.mat-card {
+  margin-top: 10px;
+}
+
+.mat-card.all-todos {
+  background: #d3d3d3;
+}
+.mat-card.pending-todos {
+  background: #add8e6;
+}
+.mat-card.done-todos {
+  background: #90ee90;
+}
+.mat-card.stats-todos {
+  background: #fafad2;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
